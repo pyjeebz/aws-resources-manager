@@ -2,6 +2,7 @@ import argparse
 from s3_manager import list_buckets, create_bucket
 from ec2_manager import list_instance, start_instance, stop_instance
 from export_manager import export_to_json, export_to_csv
+import sys
 
 def entryPointForCli():
     parser = argparse.ArgumentParser(description="AWS Resources Manager CLI")
@@ -55,5 +56,5 @@ def entryPointForCli():
             elif args.format == "csv":
                 export_to_csv([args.data or "sample,data"], "output.csv")
     
-    if entry == "entryPointForCli":
+    if __name__ == "__main__":
         entryPointForCli()
