@@ -4,6 +4,7 @@ client = boto3.client('ec2')
 
 def list_instance():
     response = client.describe_instances()
+    print("Raw response:", response)  # Debug line
     print("EC2 instance(s) created:")
     for reservation in response["Reservations"]:
         for instance in reservation["Instances"]:
