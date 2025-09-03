@@ -43,18 +43,18 @@ def entryPointForCli():
             if not args.id:
                 print("Error: --id is needed to start an instance")
             else:
-                start_instance(args.id)
+                start_instances(args.id)
         elif args.action == "stop":
             if not args.id:
                 print("Error: --id is needed to stop an instance")
             else:
-                stop_instance(args.id)
+                stop_instances(args.id)
         
-        elif args.service == "export":
-            if args.format == "json":
-                export_to_json(args.data or "{}", "output.json")
-            elif args.format == "csv":
-                export_to_csv([args.data or "sample,data"], "output.csv")
+    elif args.service == "export":
+        if args.format == "json":
+            export_to_json(args.data or "{}", "output.json")
+        elif args.format == "csv":
+            export_to_csv([args.data or "sample,data"], "output.csv")
     
-    if __name__ == "__main__":
-        entryPointForCli()
+if __name__ == "__main__":
+    entryPointForCli()
