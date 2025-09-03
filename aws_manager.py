@@ -1,6 +1,6 @@
 import argparse
 from s3_manager import list_buckets, create_bucket
-from ec2_manager import list_instances, start_instances, stop_instances
+from ec2_manager import list_instance, start_instances, stop_instances
 from export_manager import export_to_json, export_to_csv
 import sys
 
