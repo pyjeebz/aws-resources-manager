@@ -5,7 +5,7 @@ client = boto3.client('s3')
 def create_bucket(bucket_name):
     try:
         client.create_bucket(Bucket = bucket_name)
-        print(f'{bucket_name}' "has been created successfully")
+        print(f'{bucket_name}' " has been created successfully")
 
     except Exception as e:
         print("Error creating bucket: {e}")
