@@ -9,14 +9,14 @@ def list_instance():
         for instance in reservation["Instances"]:
             print(f" -ID: {instance['InstanceId']}, State: {instance['State']['Name']}")
 
-def start_instance(instance_id):
+def start_instances(instance_id):
     try:
         client.start_instances(InstanceIds=[instance_id])
         print(f"Instance {instance_id} started successfully")
     except Exception as e:
         print(f"Error while starting: {e}")
 
-def stop_instance(instance_id):
+def stop_instances(instance_id):
     try:
         client.stop_instances(InstanceIds=[instance_id])
         print(f"Instance {instance_id} successfully stopped")
