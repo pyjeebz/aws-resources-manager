@@ -51,9 +51,9 @@ def entryPointForCli():
                 stop_instances(args.id)
         
     elif args.service == "export":
-        if args.format == "json":
+        if args.action == "export_to_json":
             export_to_json(args.data or "{}", "output.json")
-        elif args.format == "csv":
+        elif args.action == "csv":
             export_to_csv([args.data or "sample,data"], "output.csv")
     
 if __name__ == "__main__":
